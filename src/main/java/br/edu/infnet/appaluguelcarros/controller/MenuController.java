@@ -8,10 +8,7 @@ public class MenuController {
 
 
 	
-	@GetMapping(value ="/economico")
-	public String telaEconomico() {
-		return "economico/economico";
-	}
+	
 
 	@GetMapping(value ="/caminhao")
 	public String telaCaminhao() {

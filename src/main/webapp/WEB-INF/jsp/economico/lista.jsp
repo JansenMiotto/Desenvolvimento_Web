@@ -15,46 +15,51 @@
 <body>
 		<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container">	
+	
+	<a href="/cadastro">Novo Carro Econômico</a>
+	
 		
 		<c:if test="${not empty nome}">
 			<div class="alert alert-success">
-				<strong>Confirmação!</strong> Usuário ${nome} cadastrado com sucesso!!!
+				<strong>Confirmação!</strong> O veículo ${nome} cadastrado com sucesso!!!
 			</div>
 		</c:if>
-	<c:if test="${not empty listaUsuarios}">
+	<c:if test="${not empty listaEconomicos}">
 	
-	<h4>Listagem de Usuários (${listaUsuarios.size}):</h4>
+	<h4>Listagem de veículos econômicos:</h4>
 	<table class="table table-striped">
 	<thead>
 	<tr>
 		<th>#</th>
-		<th>Nome</th>
-		<th>E-mail</th>
-		<th>Alunos</th>
-		<c:if test="${user.admin}">
+		<th>Carro</th>
+		<th>Cor</th>
+		<th>Valor</th>
+		<th>Automático</th>
+		<th>Qtde Condutores</th>
+		<th>Ar-Condicionado</th>		
 		<th></th>
-		</c:if>
 	</tr>
 	</thead>
 	<tbody>
-	<c:forEach var="u" items="${listaUsuarios}">
+	<c:forEach var="e" items="${listaEconomicos}">
 		<tr>
-		<td>${u.id}</td>
-		<td>${u.nome}</td>
-		<td>${u.email}</td>
-		<td>${u.alunos.size()}</td>
+		<td>${e.id}</td>
+		<td>${e.nome}</td>
+		<td>${e.cor}</td>
+		<td>${e.valor}</td>
+		<td>${e.automatico}</td>
+		<td>${e.qtdeCondutores}</td>
+		<td>${e.arCondicionado}</td>		
 		<c:if test="${user.admin}">
-		<td><a>Excluir href="/usuario/${u.id}/excluir"</a></td>
+		<td><a href="/economico/${e.id}/excluir">Excluir</a></td>
 		</c:if>
 		</tr>
 	</c:forEach>
 	</tbody>
 	</table>
 	</c:if>
-	<c:if test="${empty listaUsuarios}">
-	
-	
-	<h4>Não existem usuários!</h4>
+	<c:if test="${empty listaEconomicos}">
+	<h4>Não existem veículos cadastrados!</h4>
 	
 	
 	</c:if>

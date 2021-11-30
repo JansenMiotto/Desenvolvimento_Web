@@ -10,21 +10,17 @@ import javax.persistence.Table;
 
 import br.edu.infnet.appaluguelcarros.exception.QtdeCondutoresException;
 
-//@Entity
-//@Table(name="TEconomico")
-//@PrimaryKeyJoinColumn(name="id")
+@Entity
+@Table(name="TEconomico")
 public class Economico extends Veiculo{
-	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name="idEconomico")
-	private Integer idEconomico;
-//	@Column(name="automatico")
+
 	private boolean automatico;
-//	@Column(name="qtde_condutores")
 	private int qtdeCondutores;
-//	@Column(name="ar_condicionado")
 	private boolean arCondicionado;
+
+	public Economico() {
+	
+	}
 	
 	public Economico(String nomeCarro, String cor, int qtdeDias, boolean disponivel, float valor) {
 		super(nomeCarro, cor, qtdeDias, disponivel, valor);
@@ -79,13 +75,7 @@ public class Economico extends Veiculo{
 		this.arCondicionado = arCondicionado;
 	}
 
-	public Integer getIdEconomico() {
-		return idEconomico;
-	}
 
-	public void setIdEconomico(Integer idEconomico) {
-		this.idEconomico = idEconomico;
-	}
 	
 	
 

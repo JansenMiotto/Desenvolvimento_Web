@@ -1,3 +1,4 @@
+package br.edu.infnet.appaluguelcarros.model.repository;
 //package br.edu.infnet.appaluguelcarros.model.repository;
 
 //import org.springframework.data.repository.CrudRepository;

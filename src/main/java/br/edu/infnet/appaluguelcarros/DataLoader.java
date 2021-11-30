@@ -5,22 +5,33 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appaluguelcarros.model.domain.Endereco;
 import br.edu.infnet.appaluguelcarros.model.domain.Usuario;
-import br.edu.infnet.appaluguelcarros.model.repository.UsuarioRepository;
+import br.edu.infnet.appaluguelcarros.model.service.UsuarioService;
 
 @Component
 public class DataLoader implements ApplicationRunner{
 	
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private UsuarioService usuarioService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		Endereco endereco = new Endereco();
+		endereco.setBairro("Pq Paraiso");
+		endereco.setCep("06850150");
+		endereco.setComplemento(null);
+		endereco.setLocalidade("localidade");
+		endereco.setLogradouro("logradouro");
+		endereco.setUf("SP");
+		
 		Usuario usuario = new Usuario();
 		usuario.setEmail("t@t.com");
 		usuario.setNome("Jansen Miotto");
 		usuario.setSenha("123");
-		usuarioRepository.save(usuario);
+		usuario.setEndereco(endereco);
+		
+		usuarioService.incluir(usuario);
 		
 	}
 

@@ -98,11 +98,6 @@
 				</select>
 			</div>
 
-			<!-- 	<input type="reset"> // redefine as coisas-->
-			<!-- 	<input type="button">executar algo dentro da propria pagina, sem precisar ir no backend -->
-			<!-- 	<input type="submit" value="Cadastrar"> //fazer uma requisição no backend	 -->
-			<!-- 	<button type="reset"></button> -->
-			<!-- 	<button type="button"></button> -->
 			<button type="submit">Cadastrar</button>
 		</form>
 	</div>

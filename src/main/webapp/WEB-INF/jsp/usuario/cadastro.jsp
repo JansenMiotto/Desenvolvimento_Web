@@ -14,6 +14,16 @@
 		<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<!-- pelo action eu posso chamar uma tela, função, rotas - method post vai escondido não mostra na url -->
 	<div class="container">
+		<form action="/cep" class="form-inline" method="post">
+			<div class="form-group">
+				<label>CEP:</label> <input type="text" class="form-control"
+					placeholder="Digite seu CEP..." name="cep" value="06850-140">
+			</div>	
+			<button type="submit" class="btn btn-primary">Cadastrar</button>		
+		</form>
+		
+		<hr>
+	
 		<form action="/usuario/incluir" method="post">
 			<div class="form-group">
 				<label>Nome:</label> <input type="text" class="form-control"
@@ -28,9 +38,11 @@
 		      <label>Senha:</label>
 		      <input value="t@t.com" type="password" class="form-control" placeholder="Entre com a sua senha..." name="senha">
 		    </div>
+			
+		<c:import url="/WEB-INF/jsp/endereco.jsp"/>
+				
 
-
-			<button type="submit">Cadastrar</button>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
 <a href="/"><button>Voltar</button></a>

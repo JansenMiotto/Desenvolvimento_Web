@@ -9,15 +9,15 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name="TVeiculo")
-//@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
+@Table(name="TVeiculo")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Veiculo {
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 //	@Column(name="id")
-	private Long id;
+	private Integer id;
 //	@Column(name="nome_carro")
 	private String nomeCarro;
 //	@Column(name="cor")
@@ -29,8 +29,13 @@ public abstract class Veiculo {
 //	@Column(name="valor")
 	private float valor;
 	
+	public Veiculo() {
+	
+	}
+	
 	
 	public Veiculo(String nomeCarro, String cor, int qtdeDias, boolean disponivel, float valor) {
+		this();
 		this.nomeCarro = nomeCarro;
 		this.cor = cor;
 		this.qtdeDias = qtdeDias;
@@ -55,28 +60,67 @@ public abstract class Veiculo {
 		return sb.toString();
 	}
 
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
 	public String getNomeCarro() {
 		return nomeCarro;
 	}
+
+
+	public void setNomeCarro(String nomeCarro) {
+		this.nomeCarro = nomeCarro;
+	}
+
 
 	public String getCor() {
 		return cor;
 	}
 
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
+
 	public int getQtdeDias() {
 		return qtdeDias;
 	}
+
+
+	public void setQtdeDias(int qtdeDias) {
+		this.qtdeDias = qtdeDias;
+	}
+
 
 	public boolean isDisponivel() {
 		return disponivel;
 	}
 
+
+	public void setDisponivel(boolean disponivel) {
+		this.disponivel = disponivel;
+	}
+
+
 	public float getValor() {
 		return valor;
 	}
 
-	public Long getId() {
-		return id;
-	}	
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+
 	
+
+
 }
