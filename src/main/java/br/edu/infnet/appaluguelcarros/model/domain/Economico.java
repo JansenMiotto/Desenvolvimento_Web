@@ -60,10 +60,11 @@ public class Economico extends Veiculo{
 		return qtdeCondutores;
 	}
 
-	public void setQtdeCondutores(int qtdeCondutores) throws QtdeCondutoresException {
-		if(qtdeCondutores < 0 || qtdeCondutores > 3) {
-			throw new QtdeCondutoresException("Quantidade de Condutores Inválida.");
-		}
+	public void setQtdeCondutores(int qtdeCondutores){// throws QtdeCondutoresException {
+//		if(qtdeCondutores < 0 || qtdeCondutores > 3) {
+//			throw new QtdeCondutoresException("Quantidade de Condutores Inválida.");
+//		}
+//		this.qtdeCondutores = qtdeCondutores;
 		this.qtdeCondutores = qtdeCondutores;
 	}
 

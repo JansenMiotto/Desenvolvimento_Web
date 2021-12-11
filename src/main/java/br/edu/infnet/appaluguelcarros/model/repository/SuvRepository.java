@@ -9,14 +9,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import br.edu.infnet.appaluguelcarros.model.domain.Economico;
-import br.edu.infnet.appaluguelcarros.model.domain.Veiculo;
+import br.edu.infnet.appaluguelcarros.model.domain.Suv;
 
 @Repository
-public interface EconomicoRepository extends CrudRepository<Economico, Integer>{
-
-	List<Economico> findAll(Sort by);
+public interface SuvRepository extends CrudRepository<Suv, Integer>{
 	
-	@Query("from Economico e where e.usuario.id =:id")
-	public List<Economico> findAll(Integer id, Sort by);
+	@Query("from Suv s where s.usuario.id =:id")
+	public List<Suv> findAll(Integer id, Sort by);
 
 }

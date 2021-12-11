@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="br.edu.infnet.appaluguelcarros.model.domain.Cliente"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,55 +13,54 @@
 
 </head>
 <body>
-		<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container">	
-	
-	<a href="/cadastro">Novo Carro Econômico</a>
-	
-		
-		<c:if test="${not empty nome}">
-			<div class="alert alert-success">
-				<strong>Confirmação!</strong> O veículo ${nome} cadastrado com sucesso!!!
+		<a href="/cliente">Novo Cliente</a>
+		<hr>
+		<c:if test="${not empty mensagem}">
+			<div class="alert alert-warning">
+				<strong>Atenção!</strong> ${mensagem}
 			</div>
 		</c:if>
-	<c:if test="${not empty listaEconomicos}">
+
+		<c:if test="${not empty nome}">
+			<div class="alert alert-success">
+				<strong>Confirmação!</strong> Cliente ${nome} cadastrado com sucesso!!!
+			</div>
+		</c:if>		
+		
+	<c:if test="${not empty listaClientes}">
 	
-	<h4>Listagem de veículos econômicos:</h4>
+	<h4>Listagem de Clientes:</h4>
 	<table class="table table-striped">
 	<thead>
 	<tr>
 		<th>#</th>
-		<th>Carro</th>
-		<th>Cor</th>
-		<th>Valor</th>
-		<th>Automático</th>
-		<th>Qtde Condutores</th>
-		<th>Ar-Condicionado</th>		
+		<th>Nome</th>
+		<th>CPF</th>
+		<th>E-mail</th>
+		<th>Usuario</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	<c:forEach var="e" items="${listaEconomicos}">
+	<c:forEach var="c" items="${listaClientes}">
 		<tr>
-		<td>${e.id}</td>
-		<td>${e.nomeCarro}</td>
-		<td>${e.cor}</td>
-		<td>${e.valor}</td>
-		<td>${e.automatico}</td>
-		<td>${e.qtdeCondutores}</td>
-		<td>${e.arCondicionado}</td>		
+		<td>${c.id}</td>
+		<td>${c.nome}</td>
+		<td>${c.cpf}</td>
+		<td>${c.email}</td>
+		<td>${c.usuario.nome}</td>
 		<c:if test="${user.admin}">
-		<td><a href="/economico/${e.id}/excluir">Excluir</a></td>
+		<td><a href="/cliente/${c.id}/excluir">Excluir</a></td>
 		</c:if>
 		</tr>
 	</c:forEach>
 	</tbody>
 	</table>
 	</c:if>
-	<c:if test="${empty listaEconomicos}">
-	<h4>Não existem veículos cadastrados!</h4>
-	
-	
+	<c:if test="${empty listaClientes}">
+	<h4>Não existem Clientes!</h4>
 	</c:if>
 	</div>
 </body>

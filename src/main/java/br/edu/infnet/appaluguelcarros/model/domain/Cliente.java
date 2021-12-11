@@ -1,11 +1,32 @@
 package br.edu.infnet.appaluguelcarros.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TCliente")
 public class Cliente {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private String email;
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario usuario;
+	
+	public Cliente() {
+
+	}
 	
 	public Cliente(String nome, String cpf, String email) {
+		this();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
@@ -22,6 +43,25 @@ public class Cliente {
 		return sb.toString();
 	}
 	
+	
+	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}

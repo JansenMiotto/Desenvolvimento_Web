@@ -1,29 +1,24 @@
 package br.edu.infnet.appaluguelcarros.model.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 import br.edu.infnet.appaluguelcarros.exception.TotalPassageirosException;
 
-//@Entity
-//@Table(name="TSuv")
+@Entity
+@Table(name="TSuv")
 public class Suv extends Veiculo{
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name="idSuv")
-	private Integer idSuv;
-//	@Column(name="seguro")
-	private boolean seguro;
-//	@Column(name="total_passageiros")
-	private int totalPassageiros;
-//	@Column(name="motor")
-	private float motor;
 
+	private boolean seguro;
+	private int totalPassageiros;
+	private float motor;
+	
+	
+	
+	public Suv() {
+	}
+	
 	public Suv(String nomeCarro, String cor, int qtdeDias, boolean disponivel, float valor) {
 		super(nomeCarro, cor, qtdeDias, disponivel, valor);
 	}
@@ -60,10 +55,10 @@ public class Suv extends Veiculo{
 		return totalPassageiros;
 	}
 
-	public void setTotalPassageiros(int totalPassageiros) throws TotalPassageirosException {
-		if(totalPassageiros < 5 || totalPassageiros > 6) {
-			throw new TotalPassageirosException("Quantidade de Passageiros Inválida!");
-		}
+	public void setTotalPassageiros(int totalPassageiros) { //throws TotalPassageirosException {
+//		if(totalPassageiros < 5 || totalPassageiros > 6) {
+//			throw new TotalPassageirosException("Quantidade de Passageiros Inválida!");
+//		}
 		this.totalPassageiros = totalPassageiros;
 	}
 
@@ -73,14 +68,6 @@ public class Suv extends Veiculo{
 
 	public void setMotor(float motor) {
 		this.motor = motor;
-	}
-
-	public Integer getIdSuv() {
-		return idSuv;
-	}
-
-	public void setIdSuv(Integer idSuv) {
-		this.idSuv = idSuv;
 	}
 
 	

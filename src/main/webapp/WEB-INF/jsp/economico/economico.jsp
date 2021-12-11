@@ -15,22 +15,22 @@
 <div class="container">
 		<form action="/economico/incluir" method="post">
 			<div class="form-group">
-				<label>Nome do Carro:</label> <input type="text" class="form-control"
-					placeholder="Digite o nome do carro..." name="nome">
+				<label>Nome do Carro:</label> <input value="Fiat Uno" type="text" class="form-control"
+					placeholder="Digite o nome do carro..." name="nomeCarro">
 			</div>
 
 			<div class="form-group">
 				<label>Cor:</label> <select name="cor" class="form-control">
-					<option value="Pa">Prata</option>
-					<option value="Po">Preto</option>
-					<option value="B">Branco</option>
-					<option value="V">Vermelho</option>
+					<option value="Prata">Prata</option>
+					<option value="Preto">Preto</option>
+					<option value="Branco">Branco</option>
+					<option value="Vermelho">Vermelho</option>
 				</select>
 			</div>
 
 
 			<div class="form-group">
-				<label>Quantidade de Dias:</label> <input type="number" class="form-control" placeholder="Qtde de dias com o carro..." name="dias">
+				<label>Quantidade de Dias:</label> <input value="5" type="number" class="form-control" placeholder="Qtde de dias com o carro..." name="dias">
 			</div>
 
 			<div class="form-group">
@@ -38,20 +38,20 @@
 			</div>
 			
 			<div class="form-group">
-				<label>Quantidade Condutores:</label> <input value="2" type="number" class="form-control" name="condutores">
+				<label>Quantidade Condutores:</label> <input value="2" type="number" class="form-control" name="qtdeCondutores">
 			</div>
 
 						<div class="form-group">
 				<label>Extra:</label>
 				<div class="form-check-inline">
 					<label class="form-check-label"> <input type="checkbox"
-						name="disciplinas" value="FUND" class="form-check-input">Câmbio Automático
+						name="automatico" class="form-check-input">Câmbio Automático
 					</label>
 				</div>
 
 				<div class="form-check-inline">
 					<label class="form-check-label"> <input type="checkbox"
-						name="disciplinas" value="NUV" class="form-check-input">Ar-condicionado
+						name="arCondicionado" class="form-check-input">Ar-condicionado
 					</label>
 				</div>
 

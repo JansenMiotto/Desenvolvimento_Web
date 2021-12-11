@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="br.edu.infnet.appaluguelcarros.model.domain.Aluno"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -14,45 +13,44 @@
 </head>
 <body>
 		<c:import url="/WEB-INF/jsp/menu.jsp"/>
-	<div class="container">
-	<a href="veiculo">Novo Aluno</a>
-	
-		<hr>
+	<div class="container">	
+		
 		<c:if test="${not empty nome}">
 			<div class="alert alert-success">
-				<strong>Confirmação!</strong> Aluno ${nome} cadastrado com sucesso!!!
+				<strong>Confirmação!</strong> Veículo ${nome} cadastrado com sucesso!!!
 			</div>
 		</c:if>
-	<c:if test="${not empty listaAlunos}">
+	<c:if test="${not empty listaVeiculos}">
 	
-	<h4>Listagem Alunos (${listaAlunos.size}):</h4>
+	<h4>Listagem de Veiculos:</h4>
 	<table class="table table-striped">
 	<thead>
 	<tr>
-	<th>#</th>
-		<th>Nome</th>
-			<th>E-mail</th>
-			<th>Usuario</th>
-				<th></th>
+		<th>#</th>
+		<th>Veiculo</th>
+		<th>Cor</th>
+		<th>Valor</th>		
+		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	<c:forEach var="a" items="${listaAlunos}">
+	<c:forEach var="v" items="${listaVeiculos}">
 		<tr>
-		<td>${a.id}</td>
-		<td>${a.nome}</td>
-		<td>${a.email}</td>
-		<td>${a.usuario.nome}</td>
-		<td><a>Excluir href="/veiculo/${a.id}/excluir"</a></td>
+		<td>${v.id}</td>
+		<td>${v.nomeCarro}</td>
+		<td>${v.cor}</td>
+		<td>${v.valor}</td>
+				
+		<c:if test="${user.admin}">
+		<td><a href="/veiculo/${v.id}/excluir">Excluir</a></td>
+		</c:if>
 		</tr>
 	</c:forEach>
 	</tbody>
 	</table>
 	</c:if>
-	<c:if test="${empty listaAlunos}">
-	
-	
-	<h4>Não existem alunos!</h4>
+	<c:if test="${empty listaVeiculos}">
+	<h4>Não existem veículos cadastrados!</h4>
 	
 	
 	</c:if>

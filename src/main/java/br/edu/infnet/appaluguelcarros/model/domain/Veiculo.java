@@ -1,12 +1,16 @@
 package br.edu.infnet.appaluguelcarros.model.domain;
 
-import javax.persistence.Column;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,19 +20,30 @@ public abstract class Veiculo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name="id")
 	private Integer id;
-//	@Column(name="nome_carro")
 	private String nomeCarro;
-//	@Column(name="cor")
 	private String cor;
-//	@Column(name="qtde_dias")
 	private int qtdeDias;
-//	@Column(name="disponivel")
 	private boolean disponivel;
-//	@Column(name="valor")
 	private float valor;
+
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario usuario;
 	
+	@ManyToMany(mappedBy = "veiculos")
+	private List<Locacao> locacao;
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+
 	public Veiculo() {
 	
 	}
@@ -58,6 +73,18 @@ public abstract class Veiculo {
 		sb.append(";");
 		sb.append(valor);
 		return sb.toString();
+	}
+
+
+	
+	
+	public List<Locacao> getLocacao() {
+		return locacao;
+	}
+
+
+	public void setLocacao(List<Locacao> locacao) {
+		this.locacao = locacao;
 	}
 
 

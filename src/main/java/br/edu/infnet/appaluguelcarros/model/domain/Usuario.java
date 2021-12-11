@@ -30,21 +30,40 @@ public class Usuario {
 	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
-	private List<Aluno> alunos;
+	private List<Cliente> clientes;
+
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<Veiculo> veiculo;
 	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<Locacao> locacao;
 	
+	public List<Veiculo> getVeiculo() {
+		return veiculo;
+	}
+	public void setVeiculo(List<Veiculo> veiculo) {
+		this.veiculo = veiculo;
+	}
 	public Endereco getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	public List<Aluno> getAlunos() {
-		return alunos;
+	
+	
+	
+	public List<Cliente> getClientes() {
+		return clientes;
 	}
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
+
+
+
 	public String getNome() {
 		return nome;
 	}
@@ -74,6 +93,12 @@ public class Usuario {
 	}
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
+	}
+	public List<Locacao> getLocacao() {
+		return locacao;
+	}
+	public void setLocacao(List<Locacao> locacao) {
+		this.locacao = locacao;
 	}
 	
 	

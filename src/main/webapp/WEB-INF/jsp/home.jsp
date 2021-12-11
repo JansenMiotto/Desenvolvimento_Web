@@ -16,6 +16,11 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container">
 		
+		<h1>Jansen Carvalho Miotto</h1>
+		<br>
+		<h1>Desenvolvimento Web com Java EE</h1>
+		<br>
+		<h2>Git: <a href="https://github.com/JansenMiotto/Desenvolvimento_Web">Link Git</a></h2>
 	</div>
 </body>
 </html>

@@ -16,21 +16,21 @@
 		<form action="/suv/incluir" method="post">
 			<div class="form-group">
 				<label>Nome do SUV:</label> <input type="text" class="form-control"
-					placeholder="Digite o nome do carro..." name="nome">
+					placeholder="Digite o nome do carro..." name="nomeCarro" value="Honda HR-V">
 			</div>
 
 			<div class="form-group">
 				<label>Cor:</label> <select name="cor" class="form-control">
-					<option value="Pa">Prata</option>
-					<option value="Po">Preto</option>
-					<option value="B">Branco</option>
-					<option value="V">Vermelho</option>
+					<option value="Prata">Prata</option>
+					<option value="Preto">Preto</option>
+					<option value="Branco">Branco</option>
+					<option value="Vermelho">Vermelho</option>
 				</select>
 			</div>
 
 
 			<div class="form-group">
-				<label>Quantidade de Dias:</label> <input type="number" class="form-control" placeholder="Qtde de dias com o carro..." name="dias">
+				<label>Quantidade de Dias:</label> <input value="5" type="number" class="form-control" placeholder="Qtde de dias com o carro..." name="qtdeDias">
 			</div>
 
 			<div class="form-group">
@@ -38,7 +38,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label>Total Passageiros:</label> <input value="6" type="number" class="form-control" name="passageiros">
+				<label>Total Passageiros:</label> <input value="6" type="number" class="form-control" name="totalPassageiros">
 			</div>
 
 			<div class="form-group">
@@ -46,7 +46,7 @@
 			</div>
 				<div class="form-check-inline">
 					<label class="form-check-label"> <input type="checkbox"
-						name="disciplinas" value="NUV" class="form-check-input">Seguro Incluso
+						name="seguro" class="form-check-input">Seguro Incluso
 					</label>
 				</div>
 

@@ -17,17 +17,17 @@
 			<h3>----Cadastro de Cliente----</h3>
 			<div class="form-group">
 				<label>Nome:</label> <input type="text" class="form-control"
-					placeholder="Digite seu nome..." name="nome">
+					placeholder="Digite seu nome..." name="nome" value="Jansen Miotto">
 			</div>
 
 			<div class="form-group">
 				<label>CPF:</label> <input type="text" class="form-control"
-					placeholder="Digite seu cpf..." name="cpf">
+					placeholder="Digite seu cpf..." name="cpf" value="12345678910">
 			</div>
 
 			<div class="form-group">
 				<label>E-mail:</label> <input type="email" class="form-control"
-					placeholder="Entre com o seu e-mail..." name="email">
+					placeholder="Entre com o seu e-mail..." name="email" value="jansen@jansen.com">
 			</div>
 
 			<button type="submit">Cadastrar</button>

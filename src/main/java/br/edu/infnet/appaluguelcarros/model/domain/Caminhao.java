@@ -10,21 +10,18 @@ import javax.persistence.Table;
 import br.edu.infnet.appaluguelcarros.exception.QtdeEixoException;
 
 
-//@Entity
-//@Table(name="TCaminhao")
+@Entity
+@Table(name="TCaminhao")
 public class Caminhao extends Veiculo {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name="idCaminhao")
-	private Integer idCaminhao;
-//	@Column(name="tipo_carroceria")
+
 	private String tipoCarroceria;
-//	@Column(name="cambio_automatico")
 	private boolean cambioAutomatico;
-//	@Column(name="qtde_eixo")
 	private int qtdeEixo;
 
+	public Caminhao() {
+		}
+	
 	public Caminhao(String nomeCarro, String cor, int qtdeDias, boolean disponivel, float valor) {
 		super(nomeCarro, cor, qtdeDias, disponivel, valor);
 	}
@@ -71,21 +68,14 @@ public class Caminhao extends Veiculo {
 		return qtdeEixo;
 	}
 
-	public void setQtdeEixo(int qtdeEixo) throws QtdeEixoException {
-		if(qtdeEixo < 5 || qtdeEixo > 9) {
-			throw new QtdeEixoException("Quantidade de Eixo inválida");
-		}
+	public void setQtdeEixo(int qtdeEixo) { //throws QtdeEixoException {
+//		if(qtdeEixo < 5 || qtdeEixo > 9) {
+//			throw new QtdeEixoException("Quantidade de Eixo inválida");
+//		}
 		this.qtdeEixo = qtdeEixo;
 	}
 
-	public Integer getIdCaminhao() {
-		return idCaminhao;
-	}
 
-	public void setIdCaminhao(Integer idCaminhao) {
-		this.idCaminhao = idCaminhao;
-	}
-	
 	
 	
 

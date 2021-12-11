@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Sistema de cadastro de veiculos</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">	
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -15,7 +15,7 @@
 		<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container">	
 	
-	<a href="/cadastro">Novo Carro Econômico</a>
+	<a href="/suv">Novo Carro SUV</a>
 	
 		
 		<c:if test="${not empty nome}">
@@ -23,9 +23,9 @@
 				<strong>Confirmação!</strong> O veículo ${nome} cadastrado com sucesso!!!
 			</div>
 		</c:if>
-	<c:if test="${not empty listaEconomicos}">
+	<c:if test="${not empty listaSuv}">
 	
-	<h4>Listagem de veículos econômicos:</h4>
+	<h4>Listagem de veículos SUV:</h4>
 	<table class="table table-striped">
 	<thead>
 	<tr>
@@ -33,31 +33,31 @@
 		<th>Carro</th>
 		<th>Cor</th>
 		<th>Valor</th>
-		<th>Automático</th>
-		<th>Qtde Condutores</th>
-		<th>Ar-Condicionado</th>		
+		<th>Seguro</th>
+		<th>Total de Passageiros</th>
+		<th>Motor</th>		
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	<c:forEach var="e" items="${listaEconomicos}">
+	<c:forEach var="s" items="${listaSuv}">
 		<tr>
-		<td>${e.id}</td>
-		<td>${e.nomeCarro}</td>
-		<td>${e.cor}</td>
-		<td>${e.valor}</td>
-		<td>${e.automatico}</td>
-		<td>${e.qtdeCondutores}</td>
-		<td>${e.arCondicionado}</td>		
+		<td>${s.id}</td>
+		<td>${s.nomeCarro}</td>
+		<td>${s.cor}</td>
+		<td>${s.valor}</td>
+		<td>${s.seguro}</td>
+		<td>${s.totalPassageiros}</td>
+		<td>${s.motor}</td>		
 		<c:if test="${user.admin}">
-		<td><a href="/economico/${e.id}/excluir">Excluir</a></td>
+		<td><a href="/suv/${s.id}/excluir">Excluir</a></td>
 		</c:if>
 		</tr>
 	</c:forEach>
 	</tbody>
 	</table>
 	</c:if>
-	<c:if test="${empty listaEconomicos}">
+	<c:if test="${empty listaSuv}">
 	<h4>Não existem veículos cadastrados!</h4>
 	
 	

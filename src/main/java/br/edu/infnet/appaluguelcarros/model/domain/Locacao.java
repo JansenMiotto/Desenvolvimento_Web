@@ -4,14 +4,45 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
+@Entity
+@Table(name = "TPedido")
 public class Locacao {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
-	private boolean gps;
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Veiculo> veiculos;
 	
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario usuario;
+
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public Locacao() {
 		data = LocalDateTime.now();
 	}
@@ -23,8 +54,6 @@ public class Locacao {
 		sb.append(descricao);
 		sb.append(";");
 		sb.append(data.format(formato));
-		sb.append(";");
-		sb.append(gps ? "GPS Incluso" : "Sem GPS");
 		sb.append(";");
 		sb.append(cliente.toString());
 		sb.append(";");
@@ -50,13 +79,6 @@ public class Locacao {
 		this.cliente = cliente;
 	}
 
-	public boolean isGps() {
-		return gps;
-	}
-
-	public void setGps(boolean gps) {
-		this.gps = gps;
-	}
 
 	public List<Veiculo> getVeiculos() {
 		return veiculos;
@@ -64,6 +86,22 @@ public class Locacao {
 
 	public void setVeiculos(List<Veiculo> veiculos) {
 		this.veiculos = veiculos;
+	}
+
+	public LocalDateTime getData() {
+		return data;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	

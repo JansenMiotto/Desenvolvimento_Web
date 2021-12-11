@@ -16,21 +16,21 @@
 		<form action="/caminhao/incluir" method="post">
 			<div class="form-group">
 				<label>Nome do Caminhão:</label> <input type="text" class="form-control"
-					placeholder="Digite o nome do caminhão..." name="nome">
+					placeholder="Digite o nome do caminhão..." name="nomeCarro" value="Carreta">
 			</div>
 
 			<div class="form-group">
 				<label>Cor:</label> <select name="cor" class="form-control">
-					<option value="Pa">Prata</option>
-					<option value="Po">Preto</option>
-					<option value="B">Branco</option>
-					<option value="V">Vermelho</option>
+					<option value="Prata">Prata</option>
+					<option value="Preto">Preto</option>
+					<option value="Branco">Branco</option>
+					<option value="Vermelho">Vermelho</option>
 				</select>
 			</div>
 
 
 			<div class="form-group">
-				<label>Quantidade de Dias:</label> <input type="number" class="form-control" placeholder="Qtde de dias com o caminhão..." name="dias">
+				<label>Quantidade de Dias:</label> <input value="5" type="number" class="form-control" placeholder="Qtde de dias com o caminhão..." name="qtdeDias">
 			</div>
 
 			<div class="form-group">
@@ -38,22 +38,22 @@
 			</div>
 			
 			<div class="form-group">
-				<label>Carroceria:</label> <select name="carroceria" class="form-control">
-					<option value="Caç">Caçamba</option>
+				<label>Carroceria:</label> <select name="tipoCarroceria" class="form-control">
+					<option value="Cacamba">Caçamba</option>
 					<option value="Bau">Baú</option>
-					<option value="Frig">Frigorífico</option>
+					<option value="Frigorifico">Frigorífico</option>
 				</select>
 			</div>			
 
 			<div class="form-group">
-				<label>Quantidade Eixo:</label> <input value="8" type="number" class="form-control" name="eixo">
+				<label>Quantidade Eixo:</label> <input value="8" type="number" class="form-control" name="qtdeEixo">
 			</div>
 			
 						<div class="form-group">
 				<label>Câmbio:</label>
 				<div class="form-check-inline">
 					<label class="form-check-label"> <input type="checkbox"
-						name="disciplinas" value="FUND" class="form-check-input">Automático
+						name="cambioAutomatico" class="form-check-input">Automático
 					</label>
 				</div>
 			
